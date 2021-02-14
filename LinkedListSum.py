@@ -1,5 +1,5 @@
 def LinkedListSum(list_one, list_two):
-    if (list_one.len() != list_two.len()) and (list_one.len() == 0):
+    if (list_one.len() != list_two.len()) or (list_one.len() == 0):
         return
     list_sum = LinkedList()
     node_one = list_one.head
