@@ -17,7 +17,6 @@ class LinkedList3:
         self.dummyNode.prev = item
         item.next = self.dummyNode 
         
-    
     def print_all_nodes(self):
         node = self.dummyNode.next
         while node != self.dummyNode:
