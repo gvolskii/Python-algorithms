@@ -16,12 +16,6 @@ class LinkedList3:
         self.dummyNode.prev.next = item
         self.dummyNode.prev = item
         item.next = self.dummyNode 
-        
-    def print_all_nodes(self):
-        node = self.dummyNode.next
-        while node != self.dummyNode:
-            print(node.value)
-            node = node.next
 
     def delete(self, val, all=False):
         node = self.dummyNode.next
