@@ -23,7 +23,7 @@ class LinkedList2:
         node = self.head
         while node is not None:
             if node.value == val:
-                return Node
+                return node
             node = node.next
         return None
 
