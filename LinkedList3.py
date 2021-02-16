@@ -41,4 +41,5 @@ class LinkedList3:
                 newNode.next = node.next
                 node.next.prev = newNode
                 node.next = newNode
+                return
             node = node.next
