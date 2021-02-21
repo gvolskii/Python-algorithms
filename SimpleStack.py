@@ -1,4 +1,5 @@
 class Stack:
+    
     def __init__(self):
         self.stack = []
 
@@ -10,7 +11,7 @@ class Stack:
             return self.stack.pop()
         else:
             return None
-
+        
     def push(self, value):
         self.stack.append(value)
 
