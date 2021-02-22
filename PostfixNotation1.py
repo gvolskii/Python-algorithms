@@ -10,5 +10,10 @@ def postfix(string):
             elif element == '*': 
                 result = numbers.pop() * numbers.pop()
                 numbers.push(result)
+            elif element == '-':
+                a = numbers.pop()
+                b = numbers.pop()
+                result = b - a
+                numbers.push(result)
             elif element == '=':
                 return numbers.pop()
