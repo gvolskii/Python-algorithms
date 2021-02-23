@@ -4,9 +4,8 @@ def BracketsBalanced(string):
         if symbol == '(':
             brackets.push(symbol)
         if symbol == ')':
-            if brackets.peek() != '(':
+            if brackets.pop() != '(':
                 return False
-            brackets.pop()
     if brackets.size() > 0:
         return False
     return True
