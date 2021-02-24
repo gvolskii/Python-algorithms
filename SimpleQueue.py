@@ -8,9 +8,7 @@ class Queue:
 
     def dequeue(self):
         if self.size() > 0:
-            item = self.queue[0]
-            self.queue.remove(item)
-            return item
+            return self.queue.pop(0)
         return None 
 
     def size(self):
