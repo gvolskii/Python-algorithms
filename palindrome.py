@@ -5,6 +5,6 @@ def palindrome(string):
             symbols.addTail(symbol)
     while symbols.size():
         head, tail = symbols.removeFront(), symbols.removeTail()
-        if head != tail and head is not None and tail is not None:
+        if head != tail and tail is not None:
             return False
     return True
