@@ -6,6 +6,4 @@ def BracketsBalanced(string):
         if symbol == ')':
             if brackets.pop() != '(':
                 return False
-    if brackets.size() > 0:
-        return False
-    return True
+    return brackets.size() == 0
