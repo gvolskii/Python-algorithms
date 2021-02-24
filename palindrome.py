@@ -3,8 +3,7 @@ def palindrome(string):
     for symbol in string.lower():
         if symbol != ' ':
             symbols.addTail(symbol)
-    while symbols.size():
-        head, tail = symbols.removeFront(), symbols.removeTail()
-        if head != tail and tail is not None:
+    while symbols.size() > 1:
+        if symbols.removeFront() != symbols.removeTail():
             return False
     return True
