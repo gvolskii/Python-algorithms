@@ -63,12 +63,12 @@ class OrderedList:
         node = self.head
         if self.__ascending:
             while node is not None and self.compare(val, node.value) >= 0:
-                if self.compare(val, node.value) == 0:
+                if val == node.value:
                     return node
                 node = node.next
         if not self.__ascending:
             while node is not None and self.compare(val, node.value) <= 0:
-                if self.compare(val, node.value) == 0:
+                if val == node.value:
                     return node
                 node = node.next
         return None
