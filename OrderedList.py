@@ -127,8 +127,8 @@ class OrderedStringList(OrderedList):
         super(OrderedStringList, self).__init__(asc)
 
     def compare(self, v1, v2):
-        if len(v1.strip()) < len(v2.strip()):
+        if v1.strip() < v2.strip():
             return -1
-        if len(v1.strip()) > len(v2.strip()):
+        if v1.strip() > v2.strip():
             return 1
         return 0
