@@ -30,7 +30,8 @@ class SimpleTree:
         return [node for node in all_nodes if node.NodeValue == val]
    
     def MoveNode(self, OriginalNode, NewParent):
-        pass  
+        self.DeleteNode(OriginalNode)
+        self.AddChild(NewParent, OriginalNode)
    
     def Count(self):
         return len(self.GetAllNodes())
