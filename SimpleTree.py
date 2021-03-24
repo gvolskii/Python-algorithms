@@ -17,7 +17,7 @@ class SimpleTree:
         NodeToDelete.Parent = None
 
     def GetAllNodes(self):
-        if self.Root is None or self.Root.Children == []:
+        if self.Root is None:
             return []
         nodes = [self.Root]
         for node in nodes:
