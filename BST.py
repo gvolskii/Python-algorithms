@@ -43,7 +43,6 @@ class BST:
         finded_node = FindNodeByKey(key)
         if finded_node.NodeHasKey:
             return False
-        new_node
         if finded_node.ToLeft:
             finded_node.Node.LeftChild = BSTNode(key, val, finded_node.Node)
         else:
