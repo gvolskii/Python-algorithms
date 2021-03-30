@@ -40,7 +40,7 @@ class BST:
                 node = node.RightChild
 
     def AddKeyValue(self, key, val):
-        finded_node = FindNodeByKey(key)
+        finded_node = self.FindNodeByKey(key)
         if finded_node.NodeHasKey:
             return False
         if finded_node.ToLeft:
