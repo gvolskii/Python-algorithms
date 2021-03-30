@@ -6,7 +6,6 @@ class BSTNode:
         self.LeftChild = None
         self.RightChild = None
 
-
 class BSTFind:
     def __init__(self):
         self.Node = None
