@@ -49,7 +49,7 @@ class BST:
             finded_node.Node.RightChild = BSTNode(key, val, finded_node.Node)
   
     def FinMinMax(self, FromNode, FindMax):
-        finded_element = BSTNode()
+        finded_element = BSTFind()
         if FromNode is None:
             return finded_element
         node = FromNode
