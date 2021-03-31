@@ -63,7 +63,44 @@ class BST:
         return finded_element
 
     def DeleteNodeByKey(self, key):
-        return False
+        removed_node = self.FindNodeByKey(key)
+        if not removed_node.NodeHasKey:
+            return False
+        if removed_node.Node.LeftChild is None and removed_node.Node.RightChild is None:
+            if removed_node.Node.Parent.LeftChild == removed_node.Node:
+                removed_node.Node.Parent.LeftChild = None
+            else:
+                removed_node.Node.Parent.RightChild = None
+            removed_node.Node.Parent = None
+        elif removed_node.Node.RightChild is None:
+            removed_node.Node.LeftChild.Parent = removed_node.Node.Parent
+            if removed_node.Node.Parent is not None:
+                if removed_node.Node.Parent.LeftChild == removed_node.Node:
+                    removed_node.Node.Parent.LeftChild = removed_node.Node.LeftChild
+                else:
+                    removed_node.Node.Parent.RightChild = removed_node.Node.LeftChild
+            removed_node.Node.Parent = None
+        else:       
+            insert_node = self.FinMinMax(removed_node.Node.RightChild, False)
+            if insert_node.Node.RightChild is None:
+                insert_node.Node.Parent.LeftChild = None
+                insert_node.Node.Parent = removed_node.Node.Parent
+                if removed_node.Node.Parent.LeftChild == removed_node.Node:
+                    removed_node.Node.Parent.LeftChild = insert_node.Node
+                else:
+                    removed_node.Node.Parent.RightChild = insert_node.Node
+            else:
+                insert_node.Node.RightChild.Parent = insert_node.Node.Parent
+                insert_node.Node.Parent.LeftChild = insert_node.Node.RightChild
+                insert_node.Node.Parent = removed_node.Node.Parent
+                if removed_node.Node.Parent.LeftChild == removed_node.Node:
+                    removed_node.Node.Parent.LeftChild = insert_node.Node
+                else:
+                    removed_node.Node.Parent.RightChild = insert_node.Node
 
     def Count(self):
-        return 0
+        if self.Root is None:
+            return 0
+        left_count = BST(self.Root.LeftChild).Count()
+        right_count = BST(self.Root.RightChild).Count()
+        return 1 + left_count + right_count
