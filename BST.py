@@ -66,7 +66,7 @@ class BST:
         removed_node = self.FindNodeByKey(key)
         if not removed_node.NodeHasKey:
             return False
-        if removed_node.Node.LeftChild is None and removed_node.Node.RightChild is None: #нет детей
+        if removed_node.Node.LeftChild is None and removed_node.Node.RightChild is None:
             if removed_node.Node.Parent.LeftChild == removed_node.Node:
                 removed_node.Node.Parent.LeftChild = None
             else:
