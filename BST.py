@@ -58,7 +58,7 @@ class BST:
             finded_element.Node = node
         else:
             while node.LeftChild is not None:
-                node = node.LefttChild
+                node = node.LeftChild
             finded_element.Node = node
         return finded_element
 
