@@ -63,7 +63,7 @@ class BST:
         return finded_element
 
     def DeleteNodeByKey(self, key):
-         removed_node = self.FindNodeByKey(key)
+        removed_node = self.FindNodeByKey(key)
         if not removed_node.NodeHasKey:
             return False
         if removed_node.Node.LeftChild is None and removed_node.Node.RightChild is None:
